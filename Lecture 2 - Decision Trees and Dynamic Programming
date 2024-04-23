@@ -48,8 +48,8 @@ def yieldAllCombos(items):
         combo1= []
         for j in range(N):
             # test bit jth of integer i
-            if (i >> j) % 3 == 1:
+            if (i // (3 ** j)) % 3 == 1:
                 combo.append(items[j])
-            elif (i >> j) % 3 == 2:
+            elif (i // (3 ** j)) % 3 == 2:
                 combo1.append(items[j])
         yield combo, combo1
